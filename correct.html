@@ -1,0 +1,74 @@
+<?php
+    //Template Name: About Us Template
+get_header();
+ ?>
+<section class="generic-banner relative" style="background: linear-gradient(
+            to right,
+            rgba(0,0,0, 0.4),
+            rgba(0,0,0, 0.1)
+          ),url(<?php echo the_post_thumbnail_url('about_banner') ?>);
+          background-size: cover; 
+          background-attachment: scroll;
+          background-repeat: no-repeat; 
+          ">
+    <div class="container">
+        <div class="row height align-items-center justify-content-center">
+            <div class="col-lg-10 text-left">
+                <div class="generic-banner-content">
+                    <h2 class="text-white">About Us</h2>
+                    <!-- <p class="text-white">It won’t be a bigger problem to find one video game lover in your <br> neighbor. Since the introduction of Virtual Game.</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="video-sec-area section-gap" id="about">
+    <div class="container">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-lg-10 text-center video-left">
+                <h3 class="mb-3 font-italic">
+                    <?php echo get_field('about_title')  ?>
+                </h3>
+                <p class="mt-4 mb-5 secondScroll__text ">
+                    <?php echo get_field('about_content')  ?>
+                </p>
+                <!-- <a class="primary-btn" href="#">Get Datasheet</a> -->
+                <!-- <a href="#" class="genric-btn danger circle px-5">Get Dataset</a> -->
+            </div>
+            <!-- <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
+                    <div class="overlay overlay-bg"></div>
+                    <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid" src="img\play-icon.png" alt=""></a>
+                </div> -->
+        </div>
+    </div>
+</section>
+<section class="video-sec-area  section-gap about__dealership" id="about">
+    <div class="container">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-lg-9 text-center about__dealership__content">
+                <div class="row">
+                    <div class="col-sm-5 pl-0">
+                        <?php
+                            $id_image= get_field('dealership_image');
+                            $image= wp_get_attachment_image_src($id_image, 'aboutimage');
+                         ?>
+                        <img src="<?php echo $image[0]; ?>" alt="" width="100%">
+                    </div>
+                    <div class="col-sm-7 text-lg-left text-md-left text-sm-center ">
+                        <h5 class="mt-5 mb-3">
+                            <?php echo get_field('dealership_title')  ?>
+                        </h5>
+                        <p>
+                            <?php echo get_field('dealership_description')  ?>
+                        </p>
+                        <div class="mt-5">
+                            <span>Click below for dealership enquiry</span> <br>
+                            <a class="primary-btn trans____black__button my-2" target="_blank" href="<?php echo get_field('dealership_form_link') ?>">Dealership</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php get_footer(); ?>
